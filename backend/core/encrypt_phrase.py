@@ -1,5 +1,3 @@
-# import pandas as pd
-import random
 import numpy as np
 
 class encryptPhrase:
@@ -148,11 +146,11 @@ class encryptPhrase:
                 return (self.encryptedalpha[idx] + " = " + i)
 
 
-p = encryptPhrase()
-
-phraseList = ["It's always sunny out!", "I enjoy eating ice cream outside!"]
-for i in phraseList:
-    p.setPhrase(i)
-    print(p.encryptedalpha)
-    print(p.getEncryptedPhrase())
-    print(p.getHint(1))
+# p = encryptPhrase()
+#
+# phraseList = ["It's always sunny out!", "I enjoy eating ice cream outside!"]
+# for i in phraseList:
+#     p.setPhrase(i)
+#     print(p.encryptedalpha)
+#     print(p.getEncryptedPhrase())
+#     print(p.getHint(1))

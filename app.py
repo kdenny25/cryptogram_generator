@@ -3,8 +3,8 @@ import xlsxwriter
 import tkinter as tk
 import os
 from tkinter import filedialog
-from crypto_gen import encryptPhrase
-from file_management import importFile
+from backend.core.encrypt_phrase import encryptPhrase
+from backend.core.file_management import importFile
 
 
 
@@ -19,10 +19,10 @@ def createCryptograms(file_path, num_hints):
     crypto_gen = encryptPhrase()
     df_copy = phrases.dataframe
     df_copy["encrypted"] = ""
-    print(crypto_gen.encryptedalpha)
-    # create columns for each number of specified hints
-    for i in range(num_hints):
-        df_copy["hint " + str(i)] = ""
+    # print(crypto_gen.encryptedalpha)
+    # # create columns for each number of specified hints
+    # for i in range(num_hints):
+    #     df_copy["hint " + str(i)] = ""
 
 
     # iterate through list of phrases and encrypt them
@@ -38,9 +38,9 @@ def createCryptograms(file_path, num_hints):
 
     return df_copy
 
-final_df = createCryptograms(file_path, 3)
-
-save_path = os.path.splitext(file_path)
-save_path = save_path[0] + "test_encrypt.xlsx"
-print(save_path)
-final_df.to_excel(save_path, engine='xlsxwriter')
+if file_path != '':
+    final_df = createCryptograms(file_path, 3)
+    save_path = os.path.splitext(file_path)
+    save_path = save_path[0] + "test_encrypt.xlsx"
+    print(save_path)
+    final_df.to_excel(save_path, engine='xlsxwriter')

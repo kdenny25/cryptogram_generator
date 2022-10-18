@@ -1,0 +1,11 @@
+# pandas library
+pandas
+
+# excel document engine
+xlrd
+
+# Tkinter UI library
+tkinter
+
+# Custom version of Tkinter
+customtkinter
